@@ -96,6 +96,22 @@ def pretty_print_json(obj: Union[str, dict]) -> None:
     pretty_json = json.dumps(json_obj, ensure_ascii=False, indent=4).replace('\\n', '\n')
     print(pretty_json)
 
+def get_client(base_url: str = "https://chomskygw.vip.qa.ebay.com/api/v1/openai", api_key: str = None) -> OpenAI:
+    """
+    Create and return an OpenAI client instance.
+
+    Args:
+        base_url: The base URL for the OpenAI API (default: "https://chomskygw.vip.qa.ebay.com/api/v1/openai")
+        api_key: The API key for authentication
+
+    Returns:
+        An instance of the OpenAI client
+    """
+    return OpenAI(
+        base_url=base_url,
+        api_key=api_key
+    )
+
 def openai_api_call(
     client: OpenAI,
     api_params: Dict[str, Any],

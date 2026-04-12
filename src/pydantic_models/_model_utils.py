@@ -4,7 +4,7 @@ Helpers and abstract models.
 
 from typing import Optional, List, Any, TypeVar
 from pydantic import BaseModel, ValidationError
-from ..openai_utils import ConversationRetryError
+from ..utils.openai_utils import ConversationRetryError
 
 
 # ============================================================================
